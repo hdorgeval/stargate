@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400');
+
+body{
+	overflow: hidden;
+}
+
+.world{
+  position: absolute;
+  width:100%;
+  height:100%;
+  background: #000;
+}
+#credits{
+  position:absolute;
+  width:100%;
+  margin: auto;
+  bottom:0;
+  margin-bottom:20px;
+  font-family:"Josefin Sans", sans-serif;
+  color:#555555;
+  font-size:0.7em;
+  text-transform: uppercase;
+  text-align : center;
+}
+#credits a {
+  color:#999999;
+	text-decoration: none;
+}
