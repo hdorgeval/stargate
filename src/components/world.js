@@ -1,4 +1,8 @@
-class World {
+import * as THREE from 'three';
+
+let PI = Math.PI;
+
+export class World {
     constructor(width, height) {
 
         this.renderer = new THREE.WebGLRenderer({
@@ -82,27 +86,3 @@ class World {
         }
     }
 };
-
-document.addEventListener("DOMContentLoaded", domIsReady);
-let mousePos = { x: 0, y: 0, px: 0, py: 0 };
-let world;
-
-function domIsReady() {
-    world = new World(this.container, this.renderer, window.innerWidth, window.innerHeight);
-    window.addEventListener('resize', handleWindowResize, false);
-    document.addEventListener("mousemove", handleMouseMove, false);
-    handleWindowResize();
-    world.loop();
-}
-
-function handleWindowResize() {
-    world.updateSize(window.innerWidth, window.innerHeight);
-}
-
-function handleMouseMove(e) {
-    mousePos.x = e.clientX;
-    mousePos.y = e.clientY;
-    mousePos.px = mousePos.x / window.innerWidth * 2 - 1;
-    mousePos.py = mousePos.y / window.innerHeight * 2 - 1;
-    world.mouseMove(mousePos);
-}
