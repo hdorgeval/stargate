@@ -15,10 +15,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const world = new World(this.container, this.renderer, window.innerWidth, window.innerHeight);
+    world = new World(this.container, this.renderer, window.innerWidth, window.innerHeight);
     
     window.addEventListener('resize', () => this.handleWindowResize(), false);
-    document.addEventListener('mousemove', () => this.handleMouseMove(), false);
+    document.addEventListener('mousemove', (event) => this.handleMouseMove(event), false);
     this.handleWindowResize();
     world.loop();
   }
